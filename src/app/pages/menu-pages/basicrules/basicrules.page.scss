@@ -1,0 +1,30 @@
+ion-toolbar {
+    // Gradiente
+    --background: rgb(181,36,36); /* Old browsers */
+    --background: -moz-linear-gradient(left,  rgba(181,36,36,1) 0%, rgba(108,0,135,1) 100%); /* FF3.6-15 */
+    --background: -webkit-linear-gradient(left,  rgba(181,36,36,1) 0%,rgba(108,0,135,1) 100%); /* Chrome10-25,Safari5.1-6 */
+    --background: linear-gradient(to right,  rgba(181,36,36,1) 0%,rgba(108,0,135,1) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#b52424', endColorstr='#6c0087',GradientType=1 ); /* IE6-9 */
+}
+    
+.title {
+    font-family: MCoBold;
+    font-size: 32px;
+    color: #f5f7fa;
+    padding-bottom: 7px;
+}
+
+.box {
+    height: 100%;
+    padding-top: 5px;
+    padding-bottom: 10px;
+    padding-right: 14px;
+    padding-left: 14px;
+}
+
+ion-content {
+    --background: linear-gradient(rgba(255,255,255,0.8),rgba(255,255,255,0.8)),url('/assets/imgs/fondoIS.jpg');
+    --background-position: center top;
+    --background-repeat: repeat-y;
+    --background-size: cover;
+}

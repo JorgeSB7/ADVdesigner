@@ -74,7 +74,23 @@
   --ion-color-light-contrast-rgb: 0, 0, 0;
   --ion-color-light-shade: #d7d8da;
   --ion-color-light-tint: #f5f6f9;
-}
+
+  //___________________________________________________TEMAS PROPIOS
+    //Color del texto
+    --ion-text-color: #383b3d;
+    --ion-placeholder-color: rgb(204, 204, 204);
+    //Color del fondo
+    --ion-background-color: #f5f7fa;
+    //Zona superior (toolbar)
+    --ion-toolbar-background:#ffffff;
+    --ion-toolbar-border-color: #ffffff;
+    --ion-toolbar-color: #ffffff;
+    //Zona inferior (tab-bar)
+    --ion-tab-bar-background:#3b3b3b;
+    --ion-tab-bar-border-color:#000000;
+    --ion-tab-bar-color-selected: #000000;
+    --ion-tab-bar-color: rgb(0, 0, 0);
+} //___________________________________________________TEMAS PROPIOS - FINAL
 
 @media (prefers-color-scheme: dark) {
   /*

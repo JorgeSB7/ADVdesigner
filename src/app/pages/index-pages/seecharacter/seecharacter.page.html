@@ -1,0 +1,116 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-grid>
+      <ion-row>
+
+        <ion-col size="3" style="text-align:center !important">
+          <ion-button (click)="this.exit()" style="--border-radius: 100% !important;">
+            <ion-icon name="arrow-undo-outline" style="color: black;"></ion-icon>
+          </ion-button>
+        </ion-col>
+
+        <ion-col size="6" style="text-align:center !important" class="title">
+          <ion-label>{{'mcharacter.title' | translate}}</ion-label>
+        </ion-col>
+
+        <ion-col size="3" style="text-align:center !important">
+        </ion-col>
+
+      </ion-row>
+    </ion-grid>
+
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+    <div class="box">
+      <ion-grid style="font-size: 12px;">
+
+        <ion-row>
+          <ion-col size="1">
+          </ion-col>
+
+          <ion-col style="width: 100%; height: 100%;" size="10">
+            <div class="borderImg">
+              <ion-thumbnail style="width: 100%; height: 100%; border-radius: 15% !important;">
+                <ion-img src={{this.character.image}}></ion-img>
+              </ion-thumbnail>
+            </div>
+          </ion-col>
+
+          <ion-col size="1">
+          </ion-col>
+        </ion-row>
+
+        <ion-row style="padding-right: 7px; padding-left: 7px;">
+          <ion-col class="border1N" size="4">
+            {{'Mname.title' | translate}}
+          </ion-col>
+          <ion-col class="border2N" size="8">
+            {{character.namecharacter}}
+          </ion-col>
+        </ion-row>
+
+        <ion-row style="padding-right: 7px; padding-left: 7px;">
+          <ion-col class="borderA">
+            {{'Mrace.title' | translate}}
+          </ion-col>
+          <ion-col class="borderB">
+            {{character.race}}
+          </ion-col>
+          <ion-col class="borderC">
+            {{'Mclass.title' | translate}}
+          </ion-col>
+          <ion-col class="borderD">
+            {{character.rolclass}}
+          </ion-col>
+        </ion-row>
+
+        <ion-row style="padding-right: 7px; padding-left: 7px;">
+          <ion-col class="borderA" size="4">
+            {{'Mstrength.title' | translate}}
+          </ion-col>
+          <ion-col class="borderB" size="2">
+            {{character.strength}}
+          </ion-col>
+          <ion-col class="borderC" size="4">
+            {{'Mdexterity.title' | translate}}
+          </ion-col>
+          <ion-col class="borderD" size="2">
+            {{character.dexterity}}
+          </ion-col>
+        </ion-row>
+
+        <ion-row style="padding-right: 7px; padding-left: 7px;">
+          <ion-col class="borderA" size="4">
+            {{'Mconstitution.title' | translate}}
+          </ion-col>
+          <ion-col class="borderB" size="2">
+            {{character.constitution}}
+          </ion-col>
+          <ion-col class="borderC" size="4">
+            {{'Mintelligence.title' | translate}}
+          </ion-col>
+          <ion-col class="borderD" size="2">
+            {{character.intelligence}}
+          </ion-col>
+        </ion-row>
+
+        <ion-row style="padding-right: 7px; padding-left: 7px;">
+          <ion-col class="borderA" size="4">
+            {{'Mwisdom.title' | translate}}
+          </ion-col>
+          <ion-col class="borderB" size="2">
+            {{character.wisdom}}
+          </ion-col>
+          <ion-col class="borderC" size="4">
+            {{'Mcharisma.title' | translate}}
+          </ion-col>
+          <ion-col class="borderD" size="2">
+            {{character.charisma}}
+          </ion-col>
+        </ion-row>
+
+      </ion-grid>
+    </div>
+</ion-content>

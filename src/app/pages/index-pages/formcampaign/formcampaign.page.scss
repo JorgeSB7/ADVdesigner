@@ -1,0 +1,37 @@
+ion-toolbar {
+    // Gradiente
+    --background: rgb(150,106,24); /* Old browsers */
+    --background: -moz-linear-gradient(-45deg,  rgba(150,106,24,1) 0%, rgba(104,45,8,1) 100%); /* FF3.6-15 */
+    --background: -webkit-linear-gradient(-45deg,  rgba(150,106,24,1) 0%,rgba(104,45,8,1) 100%); /* Chrome10-25,Safari5.1-6 */
+    --background: linear-gradient(135deg,  rgba(150,106,24,1) 0%,rgba(104,45,8,1) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#966a18', endColorstr='#682d08',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
+}
+
+.title {
+    font-family: MCoBold;
+    font-size: 35px;
+    color: #f5f7fa;
+    padding-bottom: 11px;
+}
+
+.borderImg {
+    height: 200px;
+    width: 330px;
+    margin-bottom: 7px;
+    margin-top: 5px;
+    background: linear-gradient(rgba(255,255,255,0.5),rgba(255,255,255,0.4)),url('/assets/imgs/galleryf.png');
+    background-position: center top;
+    background-repeat: no-repeat;
+    background-size: contain;
+}
+
+.borderA {
+    border: 1px solid #7f4b10;
+}
+
+.borderB {
+    height: 200px;
+    border-left: 1px solid #7f4b10;
+    border-right: 1px solid #7f4b10;
+    border-bottom: 1px solid #7f4b10;
+}

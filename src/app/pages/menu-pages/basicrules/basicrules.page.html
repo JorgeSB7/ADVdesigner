@@ -1,0 +1,87 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button menu="custom" style="zoom:1.5"></ion-menu-button>
+    </ion-buttons>
+    <ion-grid>
+      <ion-row>
+
+        <ion-col size="1" style="text-align:center !important">
+        </ion-col>
+
+        <ion-col size="7" style="text-align:center !important" class="title">
+          <ion-label>{{'rules.title' | translate}}</ion-label>
+        </ion-col>
+
+        <ion-col size="1" style="text-align:center !important">
+        </ion-col>
+
+        <ion-col size="3" style="text-align:center !important">
+          <ion-button routerLink="/home" style="--border-radius: 100% !important;">
+            <ion-icon name="home" style="color: black;"></ion-icon>
+          </ion-button>
+        </ion-col>
+
+      </ion-row>
+    </ion-grid>
+
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div class="box">
+    <ion-grid>
+
+      <ion-row>
+        <ion-col style="text-align: center; font-weight: bold; font-family: MCoBold; font-size: 30px;">
+          <u>Acciones en Combate</u>
+        </ion-col>
+      </ion-row>
+
+      <ion-row style="padding-top: 10px;">
+        <ion-col style="text-align: center; font-weight: bold;">
+          INICIATIVA
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col>
+          La iniciativa determina el orden de los turnos durante el combate.
+          Cuando el combate comienza, cada participante hace una tirada
+          de Destreza para determinar su lugar en el orden de iniciativa. El
+          DM hace una tirada por los grupos completos de criaturas
+          idénticas, por lo que cada miembro del grupo actúa al mismo
+          tiempo. Si los jugadores empatan en sus tiradas se deben poner
+          de acuerdo en el orden de actuación de los personajes.
+        </ion-col>
+      </ion-row>
+
+      <ion-row style="padding-top: 10px;">
+        <ion-col style="text-align: center; font-weight: bold;">
+          ATACAR/LANZAR CONJUROS
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col>
+          Cuando realizas un ataque, tu tirada de ataque determina si el
+          ataque impacta o falla. Para realizar una tirada de ataque, lanza
+          un d20 y añade los modificadores apropiados. Si el total de la
+          tirada más los modificadores iguala o excede la Clase de
+          Armadura (CA) del objetivo, el ataque impacta. Los modificadores más comunes son:
+          <br><br>
+          <strong>Modificador de Característica:</strong> para un arma cuerpo a
+          cuerpo el MdC es la Fuerza. En un arma a distancia es la
+          Destreza. Las armas que posean las propiedades sutileza
+          o arrojadiza rompen esta regla. Algunos conjuros también
+          requieren una tirada de ataque. El modificador de
+          característica usado por un conjuro de ataque depende de
+          la característica de lanzamiento de conjuros del lanzador.
+          <br><br>
+          <strong>Bonificador de Competencia:</strong> añades tu BdC a tu tirada
+          de ataque cuando tu ataque use un arma con la cual eres
+          competente, así como cuando ataques con un conjuro.
+        </ion-col>
+      </ion-row>
+
+    </ion-grid>
+  </div>
+</ion-content>
