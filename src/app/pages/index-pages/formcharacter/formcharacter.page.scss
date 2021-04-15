@@ -1,3 +1,10 @@
+ion-content {
+    --background: linear-gradient(rgba(255,255,255,0.5),rgba(255,255,255,0.5)),url('/assets/imgs/fondoIS.jpg');
+    --background-position: center top;
+    --background-repeat: repeat-y;
+    --background-size: cover;
+}
+
 ion-toolbar {
     // Gradiente
     --background: rgb(18,142,170); /* Old browsers */
@@ -15,46 +22,38 @@ ion-toolbar {
 }
 
 .borderA {
-    border: 1px solid #0a687f;
+    border: 2px solid #0a687f;
 }
 
 .borderB {
-    border-left: 1px solid #0a687f;
-    border-right: 1px solid #0a687f;
-    border-bottom: 1px solid #0a687f;
+    border-left: 2px solid #0a687f;
+    border-right: 2px solid #0a687f;
+    border-bottom: 2px solid #0a687f;
 }
 
 .borderC {
-    border-right: 1px solid #0a687f;
-    border-bottom: 1px solid #0a687f;
+    border-right: 2px solid #0a687f;
+    border-bottom: 2px solid #0a687f;
 }
 
 .borderD {
-    border-left: 1px solid #0a687f;
-    border-right: 1px solid #0a687f;
-    border-bottom: 1px solid #0a687f;
+    border-left: 2px solid #0a687f;
+    border-right: 2px solid #0a687f;
+    border-bottom: 2px solid #0a687f;
 }
 
 .borderE {
-    border-right: 1px solid #0a687f;
-    border-bottom: 1px solid #0a687f;
+    border-right: 2px solid #0a687f;
+    border-bottom: 2px solid #0a687f;
 }
 
 .borderImg {
-    height: 230px !important;
-    margin-bottom: 7px;
-    margin-top: 5px;
+    height: 15em !important;
+    margin-bottom: 1em;
+    margin-top: 1em;
     background: linear-gradient(rgba(255,255,255,0.5),rgba(255,255,255,0.4)),url('/assets/imgs/galleryf.png');
-    background-position: center top;
+    background-position: center;
     background-repeat: no-repeat;
     background-size: contain;
 }
 
-/*
-ion-content {
-    --background: linear-gradient(rgba(255,255,255,0.5),rgba(255,255,255,0.5)),url('/assets/imgs/fondoIS.jpg');
-    --background-position: center top;
-    --background-repeat: repeat-y;
-    --background-size: cover;
-}
-*/

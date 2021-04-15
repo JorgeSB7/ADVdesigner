@@ -29,6 +29,8 @@ import { Camera } from '@ionic-native/camera/ngx';
 import { ImageaddService } from './services/imageadd.service';
 import { File } from '@ionic-native/file/ngx';
 import { FileTransfer} from '@ionic-native/file-transfer/ngx';
+import { FileOpener } from '@ionic-native/file-opener/ngx';
+
 
 export function createTranslateLoader(http: HttpClient) {
   return new TranslateHttpLoader(http, './assets/i18n/', '.json');
@@ -65,6 +67,7 @@ export function createTranslateLoader(http: HttpClient) {
     SplashScreen,
     NativeStorage,
     GooglePlus,
+    FileOpener,
     ImageaddService,
     AuthService,
     TextToSpeech,

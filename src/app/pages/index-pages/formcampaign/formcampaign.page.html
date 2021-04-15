@@ -33,10 +33,12 @@
         </ion-col>
         <!-- image -->
         <ion-col style="width: 100%; height: 100%;" size="11">
-          <div class="borderImg">
-            <ion-thumbnail (click)="this.setImg()" style="width: 100%; height: 100%; border-radius: 15% !important;">
-              <ion-img src={{this.campaign.picture}}></ion-img>
-            </ion-thumbnail>
+          <div style="background-color: white;">
+            <div class="borderImg">
+              <ion-thumbnail (click)="this.setImg()" style="width: 100%; height: 100%; border-radius: 15% !important;">
+                <ion-img src={{this.campaign.picture}}></ion-img>
+              </ion-thumbnail>
+            </div>
           </div>
         </ion-col>
 
@@ -57,9 +59,9 @@
       <ion-row>
         <ion-col class="borderB">
           <!-- description -->
-          <ion-item lines="none">
+          <ion-item lines="none" style="height: 100%;">
             <ion-label position="floating">{{'DescriptionN.title' | translate}}</ion-label>
-            <ion-input style="height: auto;" type="text" formControlName="description"></ion-input>
+            <ion-textarea style="height: auto;" rows="8" cols="20" type="text" formControlName="description"></ion-textarea>
           </ion-item>
         </ion-col>
       </ion-row>

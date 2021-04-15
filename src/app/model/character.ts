@@ -6,7 +6,7 @@ export interface character {
     namecharacter:string,
     race:string,
     rolclass:string,
-    image?:string,
+    image:string,
     strength:number,
     dexterity:number,
     constitution:number,
