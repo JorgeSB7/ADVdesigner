@@ -62,14 +62,39 @@
           <!-- race -->
           <ion-item lines="none">
             <ion-label position="floating">{{'race.title' | translate}}</ion-label>
-            <ion-input type="text" formControlName="race"></ion-input>
+            <ion-select value="race" okText="{{'confirmar.title' | translate}}" cancelText="{{'cancelar.title' | translate}}" 
+            formControlName="race" interface="alert">
+              <ion-select-option value="Dracónido">Dracónido</ion-select-option>
+              <ion-select-option value="Elfo">Elfo</ion-select-option>
+              <ion-select-option value="Enano">Enano</ion-select-option>
+              <ion-select-option value="Gnomo">Gnomo</ion-select-option>
+              <ion-select-option value="Humano">Humano</ion-select-option>
+              <ion-select-option value="Mediano">Mediano</ion-select-option>
+              <ion-select-option value="Semielfo">Semielfo</ion-select-option>
+              <ion-select-option value="Semiorco">Semiorco</ion-select-option>
+              <ion-select-option value="Tiefling">Tiefling</ion-select-option>
+            </ion-select>
           </ion-item>
         </ion-col>
         <ion-col class="borderC">
           <!-- rolclass -->
           <ion-item lines="none">
             <ion-label position="floating">{{'class.title' | translate}}</ion-label>
-            <ion-input type="text" formControlName="rolclass"></ion-input>
+            <ion-select value="rolclass" okText="{{'confirmar.title' | translate}}" cancelText="{{'cancelar.title' | translate}}" 
+            formControlName="rolclass" interface="alert">
+              <ion-select-option value="Bárbaro">Bárbaro</ion-select-option>
+              <ion-select-option value="Bardo">Bardo</ion-select-option>
+              <ion-select-option value="Brujo">Brujo</ion-select-option>
+              <ion-select-option value="Clérigo">Clérigo</ion-select-option>
+              <ion-select-option value="Druida">Druida</ion-select-option>
+              <ion-select-option value="Explorador">Explorador</ion-select-option>
+              <ion-select-option value="Guerrero">Guerrero</ion-select-option>
+              <ion-select-option value="Hechicero">Hechicero</ion-select-option>
+              <ion-select-option value="Mago">Mago</ion-select-option>
+              <ion-select-option value="Monje">Monje</ion-select-option>
+              <ion-select-option value="Paladín">Paladín</ion-select-option>
+              <ion-select-option value="Pícaro">Pícaro</ion-select-option>
+            </ion-select>
           </ion-item>
         </ion-col>
       </ion-row>
@@ -128,6 +153,8 @@
       <ion-row style="margin-top: 7px;">
         <ion-col size="1"></ion-col>
         <ion-col size="10">
+          <ion-button color="warning">numero</ion-button>
+
           <ion-button [disabled]="!this.form.valid" type="submit" shape="round" expand="block"
             style="color: white; font-weight: bold; --background: #395681;">
             <ion-icon name="save-outline" style="padding-right: 5px;"></ion-icon>
