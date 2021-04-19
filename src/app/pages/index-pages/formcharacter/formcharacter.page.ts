@@ -14,6 +14,9 @@ export class FormcharacterPage {
   private character: character;
   public mode: string;
   private form: FormGroup;
+  private result; result1; result2; result3 = 0;
+  private aux = 0;
+  private fue; des; con; int; sab; car = 0;
 
   constructor(private modal: ModalController,
     private formBuilder: FormBuilder,
@@ -85,6 +88,67 @@ export class FormcharacterPage {
         Validators.compose([Validators.required, Validators.maxLength(2)])
       ),
     });
+  }
+
+  randomIntFromInterval(min, max) { // min and max included
+    this.result = Math.floor(Math.random() * (max - min + 1) + min);
+    return this.result;
+  }
+
+  tirada() {
+    this.result1 = this.randomIntFromInterval(1, 6);
+    console.log("result = " + this.result1);
+    this.result2 = this.randomIntFromInterval(1, 6);
+    console.log("result2 = " + this.result2);
+    this.result3 = this.randomIntFromInterval(1, 6);
+    console.log("result3 = " + this.result3);
+    this.aux = this.result1 + this.result2 + this.result3;
+    console.log("aux = " + this.aux);
+  }
+
+  tiradafue(){
+    this.result1 = this.randomIntFromInterval(1, 6);
+    this.result2 = this.randomIntFromInterval(1, 6);
+    this.result3 = this.randomIntFromInterval(1, 6);
+    this.fue = this.result1 + this.result2 + this.result3;
+    console.log("Fuerza = " + this.fue);
+  }
+
+  tiradades(){
+    this.result1 = this.randomIntFromInterval(1, 6);
+    this.result2 = this.randomIntFromInterval(1, 6);
+    this.result3 = this.randomIntFromInterval(1, 6);
+    this.des = this.result1 + this.result2 + this.result3;
+    console.log("Destreza = " + this.des);
+  }
+
+  tiradacon(){
+    this.result1 = this.randomIntFromInterval(1, 6);
+    this.result2 = this.randomIntFromInterval(1, 6);
+    this.result3 = this.randomIntFromInterval(1, 6);
+    this.con = this.result1 + this.result2 + this.result3;
+    console.log("Constitución = " + this.con);
+  }
+  tiradaint(){
+    this.result1 = this.randomIntFromInterval(1, 6);
+    this.result2 = this.randomIntFromInterval(1, 6);
+    this.result3 = this.randomIntFromInterval(1, 6);
+    this.int = this.result1 + this.result2 + this.result3;
+    console.log("Inteligencia = " + this.int);
+  }
+  tiradasab(){
+    this.result1 = this.randomIntFromInterval(1, 6);
+    this.result2 = this.randomIntFromInterval(1, 6);
+    this.result3 = this.randomIntFromInterval(1, 6);
+    this.sab = this.result1 + this.result2 + this.result3;
+    console.log("Sabiduría = " + this.sab);
+  }
+  tiradacar(){
+    this.result1 = this.randomIntFromInterval(1, 6);
+    this.result2 = this.randomIntFromInterval(1, 6);
+    this.result3 = this.randomIntFromInterval(1, 6);
+    this.car = this.result1 + this.result2 + this.result3;
+    console.log("Carisma = " + this.car);
   }
 
   submitForm() {

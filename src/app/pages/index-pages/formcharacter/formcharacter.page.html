@@ -100,61 +100,98 @@
       </ion-row>
 
       <ion-row>
-        <ion-col class="borderB">
+        <ion-col class="borderD" size="9">
           <!-- strength -->
           <ion-item lines="none">
-            <ion-label position="fixed">{{'strength.title' | translate}}</ion-label>
-            <ion-input type="number" formControlName="strength"></ion-input>
+            <label style="width: 8em !important;">{{'strength.title' | translate}}</label>
+            <ion-input type="number" formControlName="strength" style="text-align: center;" value={{this.fue}}></ion-input>
           </ion-item>
         </ion-col>
-        <ion-col class="borderC">
+        <ion-col class="borderE" size="3">
+          <ion-button (click)="tiradafue()" style="--border-radius: 100% !important;">
+            <ion-icon style="color: black;" name="strength" src="assets/imgs/formcha/strength.svg"></ion-icon>
+          </ion-button>
+        </ion-col>
+      </ion-row>
+
+      <ion-row>
+        <ion-col class="borderD" size="9">
           <!-- dexterity -->
           <ion-item lines="none">
-            <ion-label position="fixed">{{'dexterity.title' | translate}}</ion-label>
-            <ion-input type="number" formControlName="dexterity"></ion-input>
+            <label style="width: 8em !important;">{{'dexterity.title' | translate}}</label>
+            <ion-input type="number" formControlName="dexterity" style="text-align: center;" value={{this.des}}></ion-input>
           </ion-item>
+        </ion-col>
+        <ion-col class="borderE" size="3">
+          <ion-button (click)="tiradades()" style="--border-radius: 100% !important;" color="secondary">
+            <ion-icon style="color: black;" name="strength" src="assets/imgs/formcha/dexterity.svg"></ion-icon>
+          </ion-button>
         </ion-col>
       </ion-row>
 
       <ion-row>
-        <ion-col class="borderB">
+        <ion-col class="borderB" size="9">
           <!-- constitution -->
           <ion-item lines="none">
-            <ion-label position="fixed">{{'constitution.title' | translate}}</ion-label>
-            <ion-input type="number" formControlName="constitution"></ion-input>
+            <label style="width: 8em !important;">{{'constitution.title' | translate}}</label>
+            <ion-input type="number" formControlName="constitution" style="text-align: center;" value={{this.con}}></ion-input>
           </ion-item>
         </ion-col>
-        <ion-col class="borderC">
-          <!-- intelligence -->
-          <ion-item lines="none">
-            <ion-label position="fixed">{{'intelligence.title' | translate}}</ion-label>
-            <ion-input type="number" formControlName="intelligence"></ion-input>
-          </ion-item>
+        <ion-col class="borderE" size="3">
+          <ion-button (click)="tiradacon()" style="--border-radius: 100% !important;" color="success">
+            <ion-icon style="color: black;" name="strength" src="assets/imgs/formcha/constitution.svg"></ion-icon>
+          </ion-button>
         </ion-col>
       </ion-row>
 
       <ion-row>
-        <ion-col class="borderD">
-          <!-- wisdom -->
+        <ion-col class="borderC" size="9">
+          <!-- intelligence -->
           <ion-item lines="none">
-            <ion-label position="fixed">{{'wisdom.title' | translate}}</ion-label>
-            <ion-input type="number" formControlName="wisdom"></ion-input>
+            <label style="width: 8em !important;">{{'intelligence.title' | translate}}</label>
+            <ion-input type="number" formControlName="intelligence" style="text-align: center;" value={{this.int}}></ion-input>
           </ion-item>
         </ion-col>
-        <ion-col class="borderE">
+        <ion-col class="borderE" size="3">
+          <ion-button (click)="tiradaint()" style="--border-radius: 100% !important;" color="light">
+            <ion-icon style="color: black;" name="strength" src="assets/imgs/formcha/intelligence.svg"></ion-icon>
+          </ion-button>
+        </ion-col>
+      </ion-row>
+
+      <ion-row>
+        <ion-col class="borderD" size="9">
+          <!-- wisdom -->
+          <ion-item lines="none">
+            <label style="width: 8em !important;">{{'wisdom.title' | translate}}</label>
+            <ion-input type="number" formControlName="wisdom" style="text-align: center;" value={{this.sab}}></ion-input>
+          </ion-item>
+        </ion-col>
+        <ion-col class="borderE" size="3">
+          <ion-button (click)="tiradasab()" style="--border-radius: 100% !important;" color="danger">
+            <ion-icon style="color: black;" name="strength" src="assets/imgs/formcha/wisdom.svg"></ion-icon>
+          </ion-button>
+        </ion-col>
+      </ion-row>
+
+      <ion-row>
+        <ion-col class="borderD" size="9">
           <!-- charisma -->
           <ion-item lines="none">
-            <ion-label position="fixed">{{'charisma.title' | translate}}</ion-label>
-            <ion-input type="number" formControlName="charisma"></ion-input>
+            <label style="width: 8em !important;">{{'charisma.title' | translate}}</label>
+            <ion-input type="number" formControlName="charisma" style="text-align: center;" value={{this.car}}></ion-input>
           </ion-item>
+        </ion-col>
+        <ion-col class="borderE" size="3">
+          <ion-button (click)="tiradacar()" style="--border-radius: 100% !important;" color="warning">
+            <ion-icon style="color: black;" name="strength" src="assets/imgs/formcha/charisma.svg"></ion-icon>
+          </ion-button>
         </ion-col>
       </ion-row>
 
       <ion-row style="margin-top: 7px;">
         <ion-col size="1"></ion-col>
         <ion-col size="10">
-          <ion-button color="warning">numero</ion-button>
-
           <ion-button [disabled]="!this.form.valid" type="submit" shape="round" expand="block"
             style="color: white; font-weight: bold; --background: #395681;">
             <ion-icon name="save-outline" style="padding-right: 5px;"></ion-icon>
