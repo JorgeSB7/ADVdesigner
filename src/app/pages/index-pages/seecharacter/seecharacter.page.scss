@@ -23,9 +23,9 @@ ion-toolbar {
 }
 
 .border1N {
-    border-top: 1px solid #0a687f;
-    border-left: 1px solid #0a687f;
-    border-bottom: 1px solid #0a687f;
+    border-top: 2px solid #0a687f;
+    border-left: 2px solid #0a687f;
+    border-bottom: 2px solid #0a687f;
     text-align: center;
     padding: 5px;
     font-weight: bold;
@@ -33,45 +33,61 @@ ion-toolbar {
   }
   
 .border2N {
-    border-top: 1px solid #0a687f;
-    border-left: 1px solid #0a687f;
-    border-right: 1px solid #0a687f;
-    border-bottom: 1px solid #0a687f;
+    border-top: 2px solid #0a687f;
+    border-left: 2px solid #0a687f;
+    border-right: 2px solid #0a687f;
+    border-bottom: 2px solid #0a687f;
     text-align: center;
     padding: 5px;
-    font-weight: bold;
+    font-style: italic;
+    font-size: 13px;
     background-color: rgb(238, 242, 245);
 }
   
 .borderA {
-    border-left: 1px solid #0a687f;
-    border-right: 1px solid #0a687f;
-    border-bottom: 1px solid #0a687f;
+    border-left: 2px solid #0a687f;
+    border-bottom: 2px solid #0a687f;
+    border-top: 2px solid #0a687f;
     text-align: center;
     font-weight: bold;
     background-color: rgb(149, 224, 243);
+    height: 2.5em;
 }
   
 .borderB {
-    border-bottom: 1px solid #0a687f;
-    text-align: center;
-    background-color: rgb(238, 242, 245);
-}
-  
-.borderC {
-    border-bottom: 1px solid #0a687f;
-    border-left: 1px solid #0a687f;
+    border-bottom: 2px solid #0a687f;
+    border-right: 2px solid #0a687f;
+    border-top: 2px solid #0a687f;
     text-align: center;
     font-weight: bold;
     background-color: rgb(149, 224, 243);
+    height: 2.5em;
+}
+  
+.borderC {
+    border-bottom: 2px solid #0a687f;
+    border-left: 2px solid #0a687f;
+    border-right: 2px solid #0a687f;
+    text-align: center;
+    font-weight: bold;
+    background-color: rgb(149, 224, 243);
+    height: 2.5em;
 }
   
 .borderD {
-    border-left: 1px solid #0a687f;
-    border-right: 1px solid #0a687f;
-    border-bottom: 1px solid #0a687f;
+    border-left: 2px solid #0a687f;
+    border-bottom: 2px solid #0a687f;
     text-align: center;
     background-color: rgb(238, 242, 245);
+    height: 2.5em;
+}
+
+.borderE {
+    border-right: 2px solid #0a687f;
+    border-bottom: 2px solid #0a687f;
+    text-align: center;
+    background-color: rgb(238, 242, 245);
+    height: 2.5em;
 }
 
 .borderImg {
@@ -86,4 +102,10 @@ ion-content {
     --background-position: center top;
     --background-repeat: repeat-y;
     --background-size: cover;
+}
+
+.icons {
+    color: black; 
+    height: 1.5em; 
+    width: 1.5em;
 }

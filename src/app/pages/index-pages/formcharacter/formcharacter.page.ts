@@ -4,6 +4,7 @@ import { ModalController, NavParams } from '@ionic/angular';
 import { character } from 'src/app/model/character';
 import { AuthService } from 'src/app/services/auth.service';
 import { ImageaddService } from 'src/app/services/imageadd.service';
+import { UiService } from 'src/app/services/ui.service';
 
 @Component({
   selector: 'app-formcharacter',
@@ -22,7 +23,8 @@ export class FormcharacterPage {
     private formBuilder: FormBuilder,
     private navParams: NavParams,
     private authS: AuthService,
-    private gallery: ImageaddService) {
+    private gallery: ImageaddService,
+    private ui: UiService) {
 
     this.character = this.navParams.get('character');
     if (this.character && this.character.code) {
@@ -95,60 +97,26 @@ export class FormcharacterPage {
     return this.result;
   }
 
-  tirada() {
+  tirada(carac: string) {
     this.result1 = this.randomIntFromInterval(1, 6);
-    console.log("result = " + this.result1);
     this.result2 = this.randomIntFromInterval(1, 6);
-    console.log("result2 = " + this.result2);
     this.result3 = this.randomIntFromInterval(1, 6);
-    console.log("result3 = " + this.result3);
     this.aux = this.result1 + this.result2 + this.result3;
-    console.log("aux = " + this.aux);
-  }
-
-  tiradafue(){
-    this.result1 = this.randomIntFromInterval(1, 6);
-    this.result2 = this.randomIntFromInterval(1, 6);
-    this.result3 = this.randomIntFromInterval(1, 6);
-    this.fue = this.result1 + this.result2 + this.result3;
-    console.log("Fuerza = " + this.fue);
-  }
-
-  tiradades(){
-    this.result1 = this.randomIntFromInterval(1, 6);
-    this.result2 = this.randomIntFromInterval(1, 6);
-    this.result3 = this.randomIntFromInterval(1, 6);
-    this.des = this.result1 + this.result2 + this.result3;
-    console.log("Destreza = " + this.des);
-  }
-
-  tiradacon(){
-    this.result1 = this.randomIntFromInterval(1, 6);
-    this.result2 = this.randomIntFromInterval(1, 6);
-    this.result3 = this.randomIntFromInterval(1, 6);
-    this.con = this.result1 + this.result2 + this.result3;
-    console.log("Constitución = " + this.con);
-  }
-  tiradaint(){
-    this.result1 = this.randomIntFromInterval(1, 6);
-    this.result2 = this.randomIntFromInterval(1, 6);
-    this.result3 = this.randomIntFromInterval(1, 6);
-    this.int = this.result1 + this.result2 + this.result3;
-    console.log("Inteligencia = " + this.int);
-  }
-  tiradasab(){
-    this.result1 = this.randomIntFromInterval(1, 6);
-    this.result2 = this.randomIntFromInterval(1, 6);
-    this.result3 = this.randomIntFromInterval(1, 6);
-    this.sab = this.result1 + this.result2 + this.result3;
-    console.log("Sabiduría = " + this.sab);
-  }
-  tiradacar(){
-    this.result1 = this.randomIntFromInterval(1, 6);
-    this.result2 = this.randomIntFromInterval(1, 6);
-    this.result3 = this.randomIntFromInterval(1, 6);
-    this.car = this.result1 + this.result2 + this.result3;
-    console.log("Carisma = " + this.car);
+    if (carac == "fue") {
+      this.fue = this.aux;
+    } else if (carac == "des") {
+      this.des = this.aux; 
+    } else if (carac == "con") {
+      this.con = this.aux; 
+    } else if (carac == "int") {
+      this.int = this.aux; 
+    } else if (carac == "sab") {
+      this.sab = this.aux; 
+    } else if (carac == "car") {
+      this.car = this.aux; 
+    } else {
+      this.ui.showToast("ERROR", "danger");
+    }
   }
 
   submitForm() {

@@ -11,6 +11,7 @@ pdfMake.vfs = pdfFonts.pdfMake.vfs;
 import { File } from '@ionic-native/file/ngx';
 import { FileOpener } from '@ionic-native/file-opener/ngx';
 import { AuthService } from 'src/app/services/auth.service';
+import { stringify } from '@angular/compiler/src/util';
 
 @Component({
   selector: 'app-seecharacter',
@@ -25,6 +26,7 @@ export class SeecharacterPage implements OnInit {
   aux2: any;
   loreRaza: string;
   loreClase: string;
+  fue; des; con; int; sab; car: string
 
   constructor(private modalController: ModalController,
     private ui: UiService,
@@ -37,10 +39,49 @@ export class SeecharacterPage implements OnInit {
   ngOnInit() {
     this.loreRazas();
     this.loreClases();
+
+    // BONUS
+    this.fue = this.bonus(this.character.strength);
+    this.des = this.bonus(this.character.dexterity);
+    this.con = this.bonus(this.character.constitution);
+    this.int = this.bonus(this.character.intelligence);
+    this.sab = this.bonus(this.character.wisdom);
+    this.car = this.bonus(this.character.charisma);
   }
 
   public exit() {
     this.modalController.dismiss();
+  }
+
+
+  bonus(atributo) {
+    var auxbonus;
+    if (atributo == 18 || atributo == 19 ) {
+      auxbonus = "+4"
+    } else if (atributo == 20 || atributo == 21 ) {
+      auxbonus = "+5"
+    } else if (atributo == 16 || atributo == 17 ) {
+      auxbonus = "+3"
+    } else if (atributo == 14 || atributo == 15 ) {
+      auxbonus = "+2"
+    } else if (atributo == 12 || atributo == 13 ) {
+      auxbonus = "+1"
+    } else if (atributo == 10 || atributo == 11 ) {
+      auxbonus = "+0"
+    } else if (atributo == 8 || atributo == 9 ) {
+      auxbonus = "-1"
+    } else if (atributo == 6 || atributo == 7 ) {
+      auxbonus = "-2"
+    } else if (atributo == 4 || atributo == 5 ) {
+      auxbonus = "-3"
+    } else if (atributo == 2 || atributo == 3 ) {
+      auxbonus = "-4"
+    } else if (atributo == 0 || atributo == 1 ) {
+      auxbonus = "-5"
+    } else {
+      auxbonus = "---"
+    }
+    return auxbonus;
   }
 
   /**
@@ -109,113 +150,121 @@ export class SeecharacterPage implements OnInit {
    * Genera un archivo PDF con toda la información del personaje. 
    * Cuenta con la posibilidad de descargar el archivo en el dispositivo del usuario.
    */
-  generatePDF() {
-    let docDefinition = {
-      content: [
-        { text: "FICHA DE PERSONAJE", style: 'header' },
-        {
-          columns: [
-            {
-              width: 'auto',
-              text: 'Jugador:', bold: true
-            },
-            {
-              width: 'auto',
-              text: this.authS.getUser().name
-            },
-          ],
-          columnGap: 5
-        },
-
-        { text: "espacio", style: 'whiteStyle' },
-        { text: "espacio", style: 'whiteStyle' },
-        { image: this.character.image, fit: [300, 300], style: 'centerStyle' },
-        { text: "(retrato)", style: 'centerStyle' },
-        { text: "espacio", style: 'whiteStyle' },
-        { text: "espacio", style: 'whiteStyle' },
-        { text: this.character.namecharacter, style: 'header2' },
-        { text: "espacio", style: 'whiteStyle' },
-
-        {
-          layout: 'lightHorizontalLines',
-          table: {
-            headerRows: 1,
-            widths: [80, 80, '*'],
-
-            body: [
-              [{ text: 'Característica', bold: true }, { text: 'Puntuación', bold: true }, { text: 'Mide', bold: true }],
-              ['Fuerza', this.character.strength, 'atletismo natural, energía corporal'],
-              ['Destreza', this.character.dexterity, 'agilidad física, reflejos y equilibrio'],
-              ['Constitución', this.character.constitution, 'salud, resistencia, fuerza vital'],
-              ['Inteligencia', this.character.intelligence, 'agudeza mental, recordar información, habilidad analítica'],
-              ['Sabiduría', this.character.wisdom, 'percepción, intuición'],
-              ['Carisma', this.character.charisma, 'confianza en uno mismo, elocuencia, liderazgo'],
-            ]
+  async generatePDF() {
+    await this.ui.showLoading();
+    try {
+      let docDefinition = {
+        content: [
+          { text: "FICHA DE PERSONAJE", style: 'header' },
+          {
+            columns: [
+              {
+                width: 'auto',
+                text: 'Jugador:', bold: true
+              },
+              {
+                width: 'auto',
+                text: this.authS.getUser().name
+              },
+            ],
+            columnGap: 5
+          },
+  
+          { text: "espacio", style: 'whiteStyle' },
+          { text: "espacio", style: 'whiteStyle' },
+          { image: this.character.image, fit: [300, 300], style: 'centerStyle' },
+          { text: "(retrato)", style: 'centerStyle' },
+          { text: "espacio", style: 'whiteStyle' },
+          { text: "espacio", style: 'whiteStyle' },
+          { text: this.character.namecharacter, style: 'header2' },
+          { text: "espacio", style: 'whiteStyle' },
+  
+          {
+            layout: 'lightHorizontalLines',
+            table: {
+              headerRows: 1,
+              widths: [80, 65, 40, '*'],
+  
+              body: [
+                [{ text: 'Característica', bold: true }, { text: 'Puntuación', bold: true }, { text: 'Bonus', bold: true }, { text: 'Mide', bold: true }],
+                ['Fuerza', this.character.strength, this.fue, 'atletismo natural, energía corporal'],
+                ['Destreza', this.character.dexterity, this.des, 'agilidad física, reflejos y equilibrio'],
+                ['Constitución', this.character.constitution, this.con, 'salud, resistencia, fuerza vital'],
+                ['Inteligencia', this.character.intelligence, this.int, 'agudeza mental, habilidad analítica'],
+                ['Sabiduría', this.character.wisdom, this.sab, 'percepción, intuición'],
+                ['Carisma', this.character.charisma, this.car, 'confianza en uno mismo, elocuencia, liderazgo'],
+              ]
+            }
+          },
+  
+          { text: "espacio", style: 'whiteStyle' },
+          {
+            columns: [
+              {
+                width: 'auto',
+                text: 'Raza -', bold: true
+              },
+              {
+                width: 'auto',
+                text: this.character.race, bold: true
+              }
+            ],
+            columnGap: 3
+          },
+          { text: this.loreRaza, style: 'justifyStyle' },
+  
+          { text: "espacio", style: 'whiteStyle' },
+          {
+            columns: [
+              {
+                width: 'auto',
+                text: 'Clase -', bold: true
+              },
+              {
+                width: 'auto',
+                text: this.character.rolclass, bold: true
+              }
+            ],
+            columnGap: 3
+          },
+          { text: this.loreClase, style: 'justifyStyle' },
+        ],
+  
+        styles: {
+          header: {
+            fontSize: 22,
+            bold: true,
+          },
+          header2: {
+            fontSize: 20,
+            bold: true
+          },
+          whiteStyle: {
+            alignment: 'right',
+            color: 'white'
+          },
+          justifyStyle: {
+            alignment: 'justify',
+          },
+          centerStyle: {
+            alignment: 'center',
+            italics: true,
           }
-        },
-
-        { text: "espacio", style: 'whiteStyle' },
-        {
-          columns: [
-            {
-              width: 'auto',
-              text: 'Raza -', bold: true
-            },
-            {
-              width: 'auto',
-              text: this.character.race, bold: true
-            }
-          ],
-          columnGap: 3
-        },
-        { text: this.loreRaza, style: 'justifyStyle' },
-
-        { text: "espacio", style: 'whiteStyle' },
-        {
-          columns: [
-            {
-              width: 'auto',
-              text: 'Clase -', bold: true
-            },
-            {
-              width: 'auto',
-              text: this.character.rolclass, bold: true
-            }
-          ],
-          columnGap: 3
-        },
-        { text: this.loreClase, style: 'justifyStyle' },
-      ],
-
-      styles: {
-        header: {
-          fontSize: 22,
-          bold: true,
-        },
-        header2: {
-          fontSize: 20,
-          bold: true
-        },
-        whiteStyle: {
-          alignment: 'right',
-          color: 'white'
-        },
-        justifyStyle: {
-          alignment: 'justify',
-        },
-        centerStyle: {
-          alignment: 'center',
-          italics: true,
         }
-      }
-    };
-    console.log(docDefinition);
-
-    this.pdfObj = pdfMake.createPdf(docDefinition);
-
-    this.openPDF();
-
-    this.ui.showToast("PDF generado correctamente", "success");
+      };
+      console.log(docDefinition);
+  
+      this.pdfObj = pdfMake.createPdf(docDefinition);
+  
+      this.openPDF();
+      await this.ui.hideLoading();
+      this.ui.showToast("PDF generado correctamente", "success");
+    } catch (error) {
+      await this.ui.hideLoading();
+      console.log(error);
+      this.ui.showToast("Error, no se ha podido generar el PDF", "danger");
+    }
+    
   }
 
   /**
